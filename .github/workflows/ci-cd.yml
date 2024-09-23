@@ -2,9 +2,9 @@ name: CI/CD Pipeline
 
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
   pull_request:
-    branches: [ main ]
+    branches: [ master ]
 
 jobs:
   build:
@@ -72,7 +72,7 @@ jobs:
         git config --global user.name "GitHub Actions"
         git config --global user.email "actions@github.com"
         git checkout -b deploy-branch  # Cria uma nova branch chamada 'deploy-branch'
-        git merge main  # Mescla a branch 'main' para a branch 'deploy-branch'
+        git merge master  # Mescla a branch 'master' para a branch 'deploy-branch'
         git push origin deploy-branch  # Faz push da branch 'deploy-branch' para o repositório
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Usa o token automático gerado pelo GitHub Actions
