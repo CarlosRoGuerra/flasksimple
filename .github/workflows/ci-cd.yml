@@ -69,8 +69,8 @@ jobs:
         pip install -r requirements.txt
     - name: Deploy to GitHub
       run: |
-        git config --global user.name "CarlosRoGuerra"
-        git config --global user.email "crrobg@gmail.com"
+        git config --global user.name "lumery05"
+        git config --global user.email "lumery.lm@gmail.com"
         git checkout -b deploy-branch  # Cria uma nova branch chamada 'deploy-branch'
         git merge master  # Mescla a branch 'master' para a branch 'deploy-branch'
         git push origin deploy-branch  # Faz push da branch 'deploy-branch' para o repositório
